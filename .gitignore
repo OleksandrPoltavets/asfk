@@ -43,3 +43,5 @@ config/secrets.yml
 *.bowerrc
 bower.json
 
+# Ignore RubyMine stuff
+.idea/*
