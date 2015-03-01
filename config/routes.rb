@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'signin/index'
-
   get 'gardens/index'
 
   get 'gardens/show'
