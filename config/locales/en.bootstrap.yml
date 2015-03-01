@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  breadcrumbs:
+    application:
+      root: "Index"
+    pages:
+      pages: "Pages"
   helpers:
     actions: "Actions"
     links:
@@ -10,8 +15,9 @@ en:
       confirm: "Are you sure?"
       destroy: "Delete"
       new: "New"
-    titles:
       edit: "Edit"
-      save: "Save"
-      new: "New"
-      delete: "Delete"
+    titles:
+      edit: "Edit %{model}"
+      save: "Save %{model}"
+      new: "New %{model}"
+      delete: "Delete %{model}"
