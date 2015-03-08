@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to new_session_url, layout: 'auth', notice: 'Ви вийшли!'
+    redirect_to login_url, notice: 'Ви вийшли!'
   end
 end

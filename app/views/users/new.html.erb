@@ -1,7 +1,7 @@
 <%= form_for @user, html: {class: 'form-signin'} do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
-      <h2>Form is invalid</h2>
+      <h4>Form is invalid</h4>
       <ul>
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -9,18 +9,10 @@
       </ul>
     </div>
   <% end %>
-  <h2 class="form-signin-heading">Реєстрація</h2>
-  <!--<div class="field">-->
-  <%= f.label :email %><br />
-  <%= f.text_field :email, class: 'form-control' %>
-  <!--</div>-->
-  <!--<div class="field">-->
-  <%= f.label :password %><br />
-  <%= f.password_field :password, class: 'form-control' %>
-  <!--</div>-->
-  <!--<div class="field">-->
-  <%= f.label :password_confirmation%><br />
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
-  <!--</div>-->
-  <%= f.submit "Вперед", class: 'btn btn-lg btn-primary btn-block' %>
+  <h2 class="form-signin-heading text-center">Реєстрація</h2>
+  <%= f.text_field :email, class: 'form-control', placeholder: 'Email', type: 'email' %>
+  <%= f.password_field :password, class: 'form-control', placeholder: 'Пароль', type: 'password' %>
+  <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Пароль ще раз', type: 'password' %>
+  <%= f.submit 'Зареєструватись', class: 'btn btn-lg btn-primary btn-block' %>
+  <%= link_to 'Вхід', login_path, class: 'btn btn-lg btn-default btn-block' %>
 <% end %>

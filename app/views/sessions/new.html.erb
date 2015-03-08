@@ -1,13 +1,7 @@
-<h1>Log In</h1>
-
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions"><%= submit_tag "Log In" %></div>
+<%= form_tag sessions_path, class: 'form-signin' do %>
+  <h2 class="form-signin-heading text-center">Вхід</h2>
+    <%= text_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email', type: 'email' %>
+    <%= password_field_tag :password, '', class: 'form-control', placeholder: 'Пароль', type: 'password' %>
+    <%= submit_tag 'Увійти', class: 'btn btn-lg btn-primary btn-block' %>
+  <%= link_to 'Реєстрація', signup_path, class: 'btn btn-lg btn-default btn-block' %>
 <% end %>
