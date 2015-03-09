@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  name: MyString
+  manager: MyString
+  notes: MyText
+  garden_id: 
+
+two:
+  number: 1
+  name: MyString
+  manager: MyString
+  notes: MyText
+  garden_id: 

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  belongs_to :garden
-
-  has_secure_password
   validates_uniqueness_of :email
+  has_secure_password
+
+  has_many :memberships
+  has_many :groups, through: :memberships
 end
