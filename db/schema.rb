@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309212229) do
+ActiveRecord::Schema.define(version: 20150309210824) do
 
   create_table "gardens", force: :cascade do |t|
     t.integer  "number"
