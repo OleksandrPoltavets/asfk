@@ -11,29 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309210824) do
+ActiveRecord::Schema.define(version: 20150314142754) do
 
-  create_table "gardens", force: :cascade do |t|
-    t.integer  "number"
+  create_table "children", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
     t.string   "name"
-    t.string   "director"
-    t.string   "address"
-    t.string   "phone"
+    t.date     "birthday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "children", ["group_id"], name: "index_children_on_group_id"
+  add_index "children", ["user_id"], name: "index_children_on_user_id"
 
   create_table "groups", force: :cascade do |t|
     t.integer  "number"
     t.string   "name"
     t.string   "manager"
     t.text     "notes"
-    t.integer  "garden_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "garden_number"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
-
-  add_index "groups", ["garden_id"], name: "index_groups_on_garden_id"
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "user_id"

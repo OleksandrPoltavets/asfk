@@ -6,14 +6,14 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :gardens
   resources :groups
+  resources :children
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'gardens#index'
+  root 'groups#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

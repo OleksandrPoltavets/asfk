@@ -3,8 +3,6 @@
     <%= text_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email', type: 'email' %>
     <%= password_field_tag :password, '', class: 'form-control', placeholder: 'Пароль', type: 'password' %>
 
-    <%= label_tag :garden, 'Садочок:'%>
-    <%= select_tag(:garden, options_from_collection_for_select(Garden.all, 'id', 'name'), class: 'form-control') %>
     <%= label_tag :garden, 'Група:'%>
     <%= select_tag(:group, options_from_collection_for_select(Group.all, 'id', 'name'), class: 'form-control') %><br/>
   

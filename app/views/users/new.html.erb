@@ -13,8 +13,6 @@
   <%= f.text_field :email, class: 'form-control', placeholder: 'Email', type: 'email' %>
   <%= f.password_field :password, class: 'form-control', placeholder: 'Пароль', type: 'password' %>
   <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Пароль ще раз', type: 'password' %>
-  <%= label_tag :garden, 'Садочок:'%>
-  <%= select_tag(:garden, options_from_collection_for_select(Garden.all, 'id', 'name'), multiple: true, class: 'form-control') %>
   <%= label_tag :garden, 'Група:'%>
   <%= select_tag(:group, options_from_collection_for_select(Group.all, 'id', 'name'), multiple: true, class: 'form-control') %><br/>
   <%= f.submit 'Зареєструватись', class: 'btn btn-lg btn-primary btn-block' %>

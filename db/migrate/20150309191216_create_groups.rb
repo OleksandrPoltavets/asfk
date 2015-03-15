@@ -5,10 +5,9 @@ class CreateGroups < ActiveRecord::Migration
       t.string :name
       t.string :manager
       t.text :notes
-      t.belongs_to :garden, index: true
+      t.integer :garden_number
 
       t.timestamps null: false
     end
-    add_foreign_key :groups, :gardens
   end
 end
