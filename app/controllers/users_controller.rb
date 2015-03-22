@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         # binding.pry
 
         if @group
-          @user.memberships.create(group: @group, approved: false)
+          @user.memberships.create(group: @group)
         else
           @group = Group.create(number: params[:number], garden_number: params[:garden_number])
           @user.memberships.create(group: @group, approved: true)

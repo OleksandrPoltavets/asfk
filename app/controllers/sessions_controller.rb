@@ -8,6 +8,9 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     group = Group.find_by(number: params[:number], garden_number: params[:garden_number])
     if user && user.authenticate(params[:password]) && group
+      unless group.memberships.find_by(user_id: user.id)
+        group.memberships.create(user: user)
+      end
       session[:user_id] = user.id
       flash.alert = 'Вхід успішний!'
       redirect_to group_path group
