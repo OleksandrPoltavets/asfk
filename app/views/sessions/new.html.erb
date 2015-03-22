@@ -3,9 +3,11 @@
     <%= text_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email', type: 'email' %>
     <%= password_field_tag :password, '', class: 'form-control', placeholder: 'Пароль', type: 'password' %>
 
-    <%= label_tag :garden, 'Група:'%>
-    <%= select_tag(:group, options_from_collection_for_select(Group.all, 'id', 'name'), class: 'form-control') %><br/>
-  
+    <%= label_tag :number, 'Номер групи:'%>
+    <%= number_field_tag(:number, params[:number], class: 'form-control') %><br/>
+    <%= label_tag :garden_number, 'Номер садочка:'%>
+    <%= number_field_tag(:garden_number, params[:garden_number], class: 'form-control') %><br/>
+
     <%= submit_tag 'Увійти', class: 'btn btn-lg btn-primary btn-block' %>
   <%= link_to 'Реєстрація', signup_path, class: 'btn btn-lg btn-default btn-block' %>
 <% end %>

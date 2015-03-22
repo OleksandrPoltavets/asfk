@@ -6,11 +6,17 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
+    group = Group.find_by(number: params[:number], garden_number: params[:garden_number])
+    if user && user.authenticate(params[:password]) && group
       session[:user_id] = user.id
-      redirect_to root_url, notice: 'Вхід успішний!'
+      flash.alert = 'Вхід успішний!'
+      redirect_to group_path group
     else
-      flash.now.alert = 'Email або пароль неправильні'
+      if group
+        flash.now.alert = 'Email або пароль неправильні'
+      else
+        flash.now.alert = 'Не знайдено групу!'
+      end
       render 'new', layout: 'auth'
     end
   end
