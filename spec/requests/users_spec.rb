@@ -1,13 +1,15 @@
-# coding: utf-8
-require 'rails_helper'
+require "rails_helper"
 
 describe "Users" do
 
-  describe "New user" do
-    it "should have content 'Реєстрація'" do
-      get new_user_path
-      expect(page).to have_content('Реєстрація')
-    end
+  it "should render views/users/new" do
+    get new_user_path
+    expect(response).to render_template(:new)
+  end
+
+  it "should have content 'Реєстрація'" do
+    get new_user_path
+    expect(response.body).to include("Реєстрація")
   end
 
 end
